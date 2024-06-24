@@ -1,0 +1,201 @@
+.rowContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.row {
+  color: white;
+  position: relative;
+  margin-top: 10px;
+  width: 90%;
+  min-width: 851px;
+}
+
+.arrow-img {
+  height: 9px;
+  image-rendering: -webkit-optimize-contrast;
+  backface-visibility: hidden;
+}
+
+.left-arrow {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-font-smoothing: subpixel-antialiased;
+  transform: translateX(-50%) translateY(75.1px);
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  padding: 7px;
+  backface-visibility: hidden;
+  text-rendering: geometricPrecision;
+  background-color: rgba(255, 255, 255, 0.13);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+.right-arrow {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  justify-self: center;
+  z-index: 9;
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-font-smoothing: subpixel-antialiased;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  padding: 7px;
+  backface-visibility: hidden;
+  text-rendering: geometricPrecision;
+  background-color: rgba(255, 255, 255, 0.13);
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  transform: translateY(-120px) translateX(50%);
+  right: 0;
+}
+
+.left-arrow,
+.right-arrow {
+  opacity: 1;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  background-color: rgba(255, 255, 255, 0.644);
+}
+
+.arrow-img-large {
+  height: 15px;
+}
+
+.left-arrow-large {
+  padding: 10px;
+  transform: translateY(148px) translateX(-50%);
+}
+
+.right-arrow-large {
+  padding: 10px;
+  transform: translateY(-200px) translateX(50%);
+  right: 0;
+}
+
+.genre-title {
+  margin-bottom: 10px;
+  font-family: monospace;
+  font-size: 1.7rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.large-title {
+  font-size: 2rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.row-posts {
+  display: flex;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.row-poster-cont {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-right: 13px;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.row-poster-tooltip-cont {
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding-top: 7px;
+  text-align: center;
+  font-family: monospace;
+  opacity: 0;
+  transition: all 300ms ease-in-out;
+}
+
+.row-poster-tooltip {
+  bottom: 0;
+  display: flex;
+  height: -moz-fit-content;
+  height: fit-content;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3px;
+  padding-left: 7px;
+  padding-right: 7px;
+  border: 2px solid rgb(233, 29, 29);
+  font-family: monospace;
+  transition: all 300ms ease-in-out;
+}
+
+.row-posts::-webkit-scrollbar {
+  display: none;
+}
+
+.poster-cont {
+  max-height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  top: 0;
+  -webkit-backface-visibility: hidden; /* IE 9 */ /* Chrome, Safari, Opera */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: all 200ms ease-in-out;
+  overflow: hidden;
+}
+
+.poster-cont-larger {
+  max-height: 200px;
+}
+
+.row-poster {
+  max-height: 100px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  top: 0;
+  -webkit-backface-visibility: hidden; /* IE 9 */ /* Chrome, Safari, Opera */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: all 200ms ease-in-out;
+  image-rendering: -webkit-optimize-contrast;
+  resize: both;
+}
+
+.row-poster[title]:hover::after {
+  border: 2px solid red;
+  background-color: black;
+}
+
+.row-poster:hover {
+  transform: scale(1.05) translateZ(0);
+  backface-visibility: hidden;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.row-poster-larger {
+  max-height: 200px;
+  color: rgba(231, 231, 231, 0.3215686275);
+}/*# sourceMappingURL=row.css.map */

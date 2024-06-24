@@ -1,0 +1,31 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "server",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "predeploy": "cd client && npm run predeploy",
+    "deploy": "cd client && npm run deploy",
+    "client": "cd client && npm start",
+    "server": "node server.js",
+    "start": "concurrently \"npm run client\" \"npm run dev\"",
+    "dev": "node --watch --env-file=.env server.js"
+  },
+  "author": "Mehtab",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "bcrypt": "^5.1.1",
+    "concurrently": "^8.2.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "8.4.3",
+    "react-redux": "^9.1.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}

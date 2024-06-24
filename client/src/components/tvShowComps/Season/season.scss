@@ -1,0 +1,76 @@
+.tv-season-wrapper {
+  // position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 60px;
+  width: 100%;
+  margin-bottom: 50px;
+  min-width: 851px;
+
+}
+.tv-season-cont {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+.tv-season-title {
+  color: white;
+  font-family: monospace;
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+.tv-season-row-cont {
+  max-width: 100%;
+}
+.tv-season-each-cont {
+  display: flex;
+  flex-direction: row;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  user-select: none;
+  height: fit-content;
+}
+.tv-season-each-cont::-webkit-scrollbar {
+  display: none;
+}
+.each-season {
+  height: 370px;
+}
+.tv-season-image {
+  // image-rendering:-webkit-optimize-contrast;
+  image-rendering: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  max-height: 300px;
+  margin-right: 15px;
+}
+
+.tv-season-details-cont {
+  position: relative;
+  top: 4px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: custom;
+}
+.season-name {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.number-of-ep {
+  position: relative;
+  top: 2px;
+  font-family: monospace;
+  font-size: 1.1rem;
+}
+.release-date {
+  position: relative;
+  top: 2px;
+  font-family: monospace;
+  font-size: 1.1rem;
+  
+}
