@@ -15,7 +15,7 @@ const T_cont = styled.div`
   }
 `;
 const T_Arrow = styled.img`
-  max-height: 30px;
+  max-height: 25px;
   filter: brightness(0) invert(1);
   align-self: center;
   user-select: none;
@@ -25,7 +25,7 @@ const T_Arrow = styled.img`
 const Title = styled.div`
   color: #fff;
   font-family: monospace;
-  font-size: 1.9rem;
+  font-size: 1.5rem;
 `;
 
 const Episode_cont = styled.div`
@@ -35,7 +35,7 @@ const Episode_cont = styled.div`
   overflow-x: scroll;
   scroll-behavior: smooth;
   transition: all 300ms ease-in-out;
-  height: fit-content;
+  ${"" /* height: fit-content; */}
   &::-webkit-scrollbar {
     display: none;
   }
@@ -47,10 +47,9 @@ const Each_episode_cont = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  // align-items: center;
+  align-items: center;
   cursor: pointer;
   padding: 5px;
-  padding-bottom: 100px;
   transition: all 100ms ease-in-out;
   border-radius: 2px;
   &:hover {
@@ -67,9 +66,7 @@ const Image = styled.img.attrs((props) => ({
   style: {
     background: props.background,
   },
-  
-}
-))`
+}))`
   max-height: 150px;
   image-rendering: auto;
   backface-visibility: hidden;
@@ -86,6 +83,7 @@ const Details_Cont = styled.div`
   align-items: center;
   justify-content: center;
   margin-top: 5px;
+  margin-bottom: 5px;
   width: 257px;
 `;
 const Details_name = styled.h1`
@@ -101,6 +99,7 @@ const Details_overview = styled.p`
   font-family: monospace;
   font-size: 0.9rem;
   margin-top: 0px;
+  margin-bottom: 6px;
 `;
 
 function Episodes({

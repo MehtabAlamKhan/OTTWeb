@@ -88,7 +88,7 @@ function Register(props) {
           username: username,
         })
         .then(async (res) => {
-          await console.log(res);
+          // await console.log(res);
           setUserErrorMessage("");
           setUserError(false);
           // setSignDisable(false);

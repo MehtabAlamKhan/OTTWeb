@@ -1,5 +1,6 @@
-import express from "express"
-const router = express.Router();import User from "../models/users.model.js";
+import express from "express";
+const router = express.Router();
+import User from "../models/users.model.js";
 import auth from "../middleware/auth.js";
 import registerValidation from "../userValidations.js";
 
@@ -34,21 +35,17 @@ router.post("/user/bookmarks", auth, async (req, res) => {
 
   User.findByIdAndUpdate(req.user.id)
     .then((user) => {
-      user.updateOne(
-        {
+      user
+        .updateOne({
           $push: { bookmarks: { $each: [data] } },
-        },
-        (err) => {
-          // console.log(err);
-          if (!err) {
-            return res.status(200).json(data);
-          }
-          res.status(400).json({ msg: "error" });
-        }
-      );
+        })
+        .then(() => res.status(200).json(data))
+        .catch((err) => {
+          res.status(400).json({ err });
+        });
     })
     .catch((err) => {
-      res.status(400).json({ msg: "error" });
+      res.status(400).json({ msg: "User Not Found" });
     });
 });
 
@@ -59,17 +56,12 @@ router.delete("/user/bookmarks", auth, async (req, res) => {
   // console.log(req.headers);
   User.findById(req.user.id)
     .then((user) => {
-      user.updateOne(
-        {
+      user
+        .updateOne({
           $pull: { bookmarks: req.body },
-        },
-        (err) => {
-          if (!err) {
-            return res.status(200).json(req.body);
-          }
-          res.status(400).json({ msg: "error" });
-        }
-      );
+        })
+        .then(() => res.status(200).json(req.body))
+        .catch((err) => res.status(400).json({ err }));
     })
     .catch((err) => {
       res.status(400).json({ msg: "error" });
@@ -88,18 +80,12 @@ router.post("/user/favorites", auth, async (req, res) => {
 
   User.findByIdAndUpdate(req.user.id)
     .then((user) => {
-      user.updateOne(
-        {
+      user
+        .updateOne({
           $push: { favorites: { $each: [data] } },
-        },
-        (err) => {
-          // console.log(err);
-          if (!err) {
-            return res.status(200).json(data);
-          }
-          res.status(400).json({ msg: "error" });
-        }
-      );
+        })
+        .then(() => res.status(200).json(data))
+        .catch((err) => res.status(400).json({ err }));
     })
     .catch((err) => {
       res.status(400).json({ msg: "error" });
@@ -113,17 +99,12 @@ router.delete("/user/favorites", auth, async (req, res) => {
   // console.log(req.headers);
   User.findById(req.user.id)
     .then((user) => {
-      user.updateOne(
-        {
+      user
+        .updateOne({
           $pull: { favorites: req.body },
-        },
-        (err) => {
-          if (!err) {
-            return res.status(200).json(req.body);
-          }
-          res.status(400).json({ msg: "error" });
-        }
-      );
+        })
+        .then(() => res.status(200).json(req.body))
+        .catch((err) => res.status(400).json({ err }));
     })
     .catch((err) => {
       res.status(400).json({ msg: "error" });
