@@ -1,5 +1,6 @@
-import express from "express"
-const router = express.Router();import User from "../models/users.model.js";
+import express from "express";
+const router = express.Router();
+import User from "../models/users.model.js";
 import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 

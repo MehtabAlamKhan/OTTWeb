@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { loaduser } from "../../../../actions/authAction";
 
 import "./navbar.css";
 import LoginRegister from "../login/LoginRegister";
